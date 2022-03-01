@@ -12,10 +12,15 @@ class MyApp extends StatefulWidget{
 }
 
 class _MyAppState extends State<MyApp>{
+
+  @override
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Star Travel',
+      theme: ThemeData(
+        fontFamily: 'NimbusSans'
+      ),
       initialRoute: 'home',
       routes: {
         'home' : (BuildContext context) => HomePage()

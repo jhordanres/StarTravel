@@ -30,7 +30,13 @@ class HomePage extends StatelessWidget {
                         width: 150,
                         height: 100,
                       ),
-                      const Text('Rapido y Seguro')
+                      const Text(
+                        'Rapido y Seguro',
+                        style: TextStyle(
+                          fontFamily: 'Pacifico',
+                          fontSize: 22
+                        ),
+                      )
                     ]
                   ),
                 ),
@@ -40,7 +46,9 @@ class HomePage extends StatelessWidget {
               const Text(
                 'SELECCIONA TU ROL',
                 style: TextStyle(
-                  color: Colors.white
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: 'OneDay'
                 ),
               ),
               const SizedBox(height: 30),
@@ -53,7 +61,8 @@ class HomePage extends StatelessWidget {
               const Text(
                 'Cliente',
                 style: TextStyle(
-                  color: Colors.white
+                  color: Colors.white,
+                  fontSize: 16
                 ),
                 ),
 
@@ -67,7 +76,8 @@ class HomePage extends StatelessWidget {
               const Text(
                 'Conductor',
                 style: TextStyle(
-                  color: Colors.white
+                  color: Colors.white,
+                  fontSize: 16
                 ),
                 ),  
             ]
