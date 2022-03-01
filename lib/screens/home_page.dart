@@ -17,72 +17,73 @@ class HomePage extends StatelessWidget {
           ),
           child: Column(
             children: [
-              ClipPath(
-                clipper: DiagonalPathClipperTwo(),
-                child: Container(
-                  color: Colors.white,
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children:[
-                      Image.asset(
-                        'assets/images/logo.png',
-                        width: 150,
-                        height: 100,
-                      ),
-                      const Text(
-                        'Rapido y Seguro',
-                        style: TextStyle(
-                          fontFamily: 'Pacifico',
-                          fontSize: 22
-                        ),
-                      )
-                    ]
-                  ),
-                ),
-              ),
-            
+              _bannerApp(context),
               const SizedBox(height: 50),
-              const Text(
-                'SELECCIONA TU ROL',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontFamily: 'OneDay'
-                ),
-              ),
+              _textSelectYouRol('SELECCIONA TU ROL'),
               const SizedBox(height: 30),
-              const CircleAvatar(
-                backgroundImage: AssetImage('assets/images/pasajero.png'),
-                radius: 50,
-                backgroundColor: Color.fromARGB(255, 78, 78, 78),
-              ),
+              _imageTypeUser('assets/images/pasajero.png'),
               const SizedBox(height: 10),
-              const Text(
-                'Cliente',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16
-                ),
-                ),
-
+              _textTypeUser('Cliente'),
               const SizedBox(height: 30),
-              const CircleAvatar(
-                backgroundImage: AssetImage('assets/images/driver.png'),
-                radius: 50,
-                backgroundColor: Color.fromARGB(255, 78, 78, 78),
-              ),
+              _imageTypeUser('assets/images/driver.png'),
               const SizedBox(height: 10),
-              const Text(
-                'Conductor',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16
-                ),
-                ),  
+              _textTypeUser('Conductor')
             ]
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _bannerApp(BuildContext context){
+    return ClipPath(
+      clipper: DiagonalPathClipperTwo(),
+      child: Container(
+        color: Colors.white,
+        height: MediaQuery.of(context).size.height * 0.3,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+          children: [
+          Image.asset(
+            'assets/images/logo.png',
+            width: 150,
+            height: 100,
+          ),
+          const Text(
+            'Rapido y Seguro',
+            style: TextStyle(fontFamily: 'Pacifico', fontSize: 22),
+          )
+          ]
+        ),
+      ),
+    );
+  }
+
+  Widget _textSelectYouRol(String rol){
+    return Text(
+      rol,
+      style: const TextStyle(
+        color: Colors.white, 
+        fontSize: 20, 
+        fontFamily: 'OneDay'
+      ),
+    );
+  }
+
+  Widget _imageTypeUser(String image){
+    return CircleAvatar(
+      backgroundImage: AssetImage(image),
+      radius: 50,
+      backgroundColor: const Color.fromARGB(255, 78, 78, 78),
+    );
+  }
+
+  Widget _textTypeUser(String typeUser){
+    return Text(
+      typeUser,
+      style: const TextStyle(
+        color: Colors.white, 
+        fontSize: 16
       ),
     );
   }
