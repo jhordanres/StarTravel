@@ -21,11 +21,11 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 50),
               _textSelectYouRol('SELECCIONA TU ROL'),
               const SizedBox(height: 30),
-              _imageTypeUser('assets/images/pasajero.png'),
+              _imageTypeUser(context, 'assets/images/pasajero.png'),
               const SizedBox(height: 10),
               _textTypeUser('Cliente'),
               const SizedBox(height: 30),
-              _imageTypeUser('assets/images/driver.png'),
+              _imageTypeUser(context, 'assets/images/driver.png'),
               const SizedBox(height: 10),
               _textTypeUser('Conductor')
             ]
@@ -70,11 +70,14 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _imageTypeUser(String image){
-    return CircleAvatar(
-      backgroundImage: AssetImage(image),
-      radius: 50,
-      backgroundColor: const Color.fromARGB(255, 78, 78, 78),
+  Widget _imageTypeUser(BuildContext context, String image){
+    return GestureDetector(
+      onTap: () => goToLoginPage(context),
+      child: CircleAvatar(
+        backgroundImage: AssetImage(image),
+        radius: 50,
+        backgroundColor: const Color.fromARGB(255, 78, 78, 78),
+      ),
     );
   }
 
@@ -86,5 +89,9 @@ class HomePage extends StatelessWidget {
         fontSize: 16
       ),
     );
+  }
+
+  void goToLoginPage(BuildContext context){
+    Navigator.pushNamed(context, 'login');
   }
 }

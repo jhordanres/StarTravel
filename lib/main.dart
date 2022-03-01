@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'screens/home_page.dart';
+import 'package:star_travel/screens/screens.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +22,8 @@ class _MyAppState extends State<MyApp>{
       ),
       initialRoute: 'home',
       routes: {
-        'home' : (BuildContext context) => HomePage()
+        'home' : (BuildContext context) => HomePage(),
+        'login': (BuildContext context) => LoginPage(),
       },
     );
   }
