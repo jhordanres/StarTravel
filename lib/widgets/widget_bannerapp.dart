@@ -8,6 +8,7 @@ class BannerApp extends StatelessWidget {
   Color colorText;
   double? _width;
   double? height;
+  CrossAxisAlignment alignLogo;
 
   BannerApp({
     Key? key,
@@ -16,6 +17,7 @@ class BannerApp extends StatelessWidget {
     required this.typeClipper,
     required this.context,
     this.height,
+    required this.alignLogo
   }) : super(key: key);
 
   final BuildContext context;
@@ -26,9 +28,10 @@ class BannerApp extends StatelessWidget {
       clipper: typeClipper,
       child: Container(
         color: colorBanner,
-        height: MediaQuery.of(context).size.height * 0.3,
+        height: MediaQuery.of(context).size.height * 0.23,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: alignLogo, 
           children: [
           Image.asset(
             'assets/images/logo.png',
@@ -37,7 +40,12 @@ class BannerApp extends StatelessWidget {
           ),
           Text(
             'Rapido y Seguro',
-            style: TextStyle(fontFamily: 'Pacifico', fontSize: 22, color: colorText),
+            style: TextStyle(
+              fontFamily: 'Pacifico', 
+              fontSize: 22, 
+              color: colorText,
+              height: 4
+            ),
           )
           ]
         ),

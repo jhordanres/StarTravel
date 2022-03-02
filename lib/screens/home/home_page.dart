@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
                 typeClipper: DiagonalPathClipperTwo(), 
                 colorBanner: Colors.white,
                 colorText: Colors.black,
+                alignLogo: CrossAxisAlignment.center,
               ),
               const SizedBox(height: 50),
               _textSelectYouRol('SELECCIONA TU ROL'),
