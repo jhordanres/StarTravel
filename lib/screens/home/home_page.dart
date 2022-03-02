@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:star_travel/screens/home/screens_home.dart';
+
+import '../../widgets/widgets.dart';
+
+
 
 class HomePage extends StatelessWidget {
+
+  HomeController _controller = HomeController();
+
   @override
   Widget build(BuildContext context) {
+
+    _controller.init(context); //Inicializamos nuestro controlador
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -17,7 +28,12 @@ class HomePage extends StatelessWidget {
           ),
           child: Column(
             children: [
-              _bannerApp(context),
+              BannerApp(
+                context: context, 
+                typeClipper: DiagonalPathClipperTwo(), 
+                colorBanner: Colors.white,
+                colorText: Colors.black,
+              ),
               const SizedBox(height: 50),
               _textSelectYouRol('SELECCIONA TU ROL'),
               const SizedBox(height: 30),
@@ -30,30 +46,6 @@ class HomePage extends StatelessWidget {
               _textTypeUser('Conductor')
             ]
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _bannerApp(BuildContext context){
-    return ClipPath(
-      clipper: DiagonalPathClipperTwo(),
-      child: Container(
-        color: Colors.white,
-        height: MediaQuery.of(context).size.height * 0.3,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
-          children: [
-          Image.asset(
-            'assets/images/logo.png',
-            width: 150,
-            height: 100,
-          ),
-          const Text(
-            'Rapido y Seguro',
-            style: TextStyle(fontFamily: 'Pacifico', fontSize: 22),
-          )
-          ]
         ),
       ),
     );
@@ -72,7 +64,7 @@ class HomePage extends StatelessWidget {
 
   Widget _imageTypeUser(BuildContext context, String image){
     return GestureDetector(
-      onTap: () => goToLoginPage(context),
+      onTap: () => _controller.goToLoginPage(),
       child: CircleAvatar(
         backgroundImage: AssetImage(image),
         radius: 50,
@@ -90,8 +82,5 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-  void goToLoginPage(BuildContext context){
-    Navigator.pushNamed(context, 'login');
-  }
 }
+

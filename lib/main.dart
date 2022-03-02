@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:star_travel/screens/screens.dart';
-
+import 'package:star_travel/screens/home/screens_home.dart';
+import 'package:star_travel/screens/login/screens_login.dart';
+import 'package:star_travel/utils/colors.dart' as util;
 void main() {
   runApp(MyApp());
 }
@@ -18,12 +19,16 @@ class _MyAppState extends State<MyApp>{
       debugShowCheckedModeBanner: false,
       title: 'Star Travel',
       theme: ThemeData(
-        fontFamily: 'NimbusSans'
+        fontFamily: 'NimbusSans',
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          color: util.Colors.startTravel
+        ),
       ),
       initialRoute: 'home',
       routes: {
         'home' : (BuildContext context) => HomePage(),
-        'login': (BuildContext context) => LoginPage(),
+        'login': (BuildContext context) => const LoginPage(),
       },
     );
   }
