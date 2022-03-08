@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:star_travel/screens/home/screens_home.dart';
+import 'package:star_travel/src/screens/home/screens_home.dart';
 
 import '../../widgets/widgets.dart';
 

@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:star_travel/widgets/widgets.dart';
-import 'package:star_travel/utils/colors.dart' as utils;
+import 'package:star_travel/src/widgets/widgets.dart';
+import 'package:star_travel/src/utils/colors.dart' as utils;
 
 
 class LoginPage extends StatefulWidget {
@@ -30,8 +30,11 @@ class _LoginPageState extends State<LoginPage> {
           ),
           _textDescription(),
           _textLogin(),
+          Expanded(child: Container(),),
           _textFieldEmail(),
-          _textFieldPass()
+          _textFieldPass(),
+          _buttonLogin(),
+          _dontHaveAccount()
         ],
       )
     );
@@ -69,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _textFieldEmail(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: TextField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
@@ -86,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _textFieldPass(){
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: TextField(
         obscureText: true,
         decoration: InputDecoration(
@@ -102,9 +105,24 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buttonLogin(){
-    return RaisedButton(
-      onPressed: (){},
-      child: Text('Iniciar sesion'),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+      child: ButtonApp(
+        text: 'Iniciar sesión',
+      )
+    );
+  }
+
+  Widget _dontHaveAccount(){
+    return Container(
+      margin: EdgeInsets.only(bottom: 50),
+      child: Text(
+        'No tienes cuenta?',
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.grey
+        ),
+      ),
     );
   }
 }

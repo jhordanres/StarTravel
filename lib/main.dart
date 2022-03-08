@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:star_travel/screens/home/screens_home.dart';
-import 'package:star_travel/screens/login/screens_login.dart';
-import 'package:star_travel/utils/colors.dart' as util;
+import 'package:star_travel/src/screens/home/screens_home.dart';
+import 'package:star_travel/src/screens/login/screens_login.dart';
+import 'package:star_travel/src/utils/colors.dart' as util;
 void main() {
   runApp(MyApp());
 }
