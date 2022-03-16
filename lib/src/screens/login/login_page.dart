@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
         controller: _con.passwordController,
         obscureText: true,
         decoration: InputDecoration(
-          hintText: 'Ingresa la contraseña',
+          hintText: 'Ingresa la contraseña.',
           labelText: 'Contraseña',
           suffixIcon: Icon(
             Icons.lock_open_outlined,
