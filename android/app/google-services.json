@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "484272671816",
+    "project_id": "startravelflutter",
+    "storage_bucket": "startravelflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484272671816:android:ef0df325048ea0b4d71c7d",
+        "android_client_info": {
+          "package_name": "com.example.star_travel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484272671816-fv5tgrnae60vv7ab0ghhf0sngmm2p9o8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.star_travel",
+            "certificate_hash": "73d5c8cdd0386ebcf3d5288068859ff916e48373"
+          }
+        },
+        {
+          "client_id": "484272671816-fgi34l9oqqrqdj99laagv3sf07vh1g8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlB322E4yjHG-SBPQPY0vCrnHjG8HVZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484272671816-fgi34l9oqqrqdj99laagv3sf07vh1g8h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
